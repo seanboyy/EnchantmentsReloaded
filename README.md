@@ -1,9 +1,13 @@
 # Enchantments Reloaded
 ## New Blocks
 ### Cursebreaker
+![cursebreaker](https://seanboyy.github.io/images/EnchantmentsReloaded/reference/Cursebreaker.png)
+
 Removes all curses from an item at the cost of a configurable amount (default 1/3) of that item's durability per curse
  and one nether star.
 ### Enchantment Crafting Table
+![enchantment crafting table](https://seanboyy.github.io/images/EnchantmentsReloaded/reference/EnchantmentCraftingTable.png)
+
 Place an enchanted item and one of the four modifier items into the table and the modifier will imbue the enchanted
 item with new properties.  
 ## New Items
