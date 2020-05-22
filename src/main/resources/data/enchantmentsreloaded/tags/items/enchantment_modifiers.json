@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "enchantmentsreloaded:enchantment_randomizer",
+    "enchantmentsreloaded:enchantment_adder",
+    "enchantmentsreloaded:enchantment_subtractor",
+    "enchantmentsreloaded:enchantment_leveler"
+  ]
+}

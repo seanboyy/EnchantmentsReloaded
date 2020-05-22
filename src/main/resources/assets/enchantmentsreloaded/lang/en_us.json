@@ -1,0 +1,12 @@
+{
+  "block.enchantmentsreloaded.cursebreaker": "Cursebreaker",
+  "block.enchantmentsreloaded.enchantment_crafting_table": "Enchantment Crafting Table",
+
+  "enchantmentsreloaded.container.cursebreaker": "Cursebreaker",
+  "enchantmentsreloaded.container.enchantment_crafting_table": "Enchantment Crafting Table",
+
+  "item.enchantmentsreloaded.enchantment_randomizer": "Randomizer",
+  "item.enchantmentsreloaded.enchantment_adder": "Enchanter",
+  "item.enchantmentsreloaded.enchantment_subtractor": "Disenchanter",
+  "item.enchantmentsreloaded.enchantment_leveler": "Leveler"
+}
