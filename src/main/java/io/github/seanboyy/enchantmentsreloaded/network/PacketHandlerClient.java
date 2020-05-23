@@ -3,6 +3,7 @@ package io.github.seanboyy.enchantmentsreloaded.network;
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.IPacketHandler;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentModified;
+import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentTransfer;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketItemDecursed;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
@@ -17,6 +18,7 @@ public class PacketHandlerClient {
     public PacketHandlerClient() {
         clientHandlers.put(PacketIdClient.ITEM_DECURSED, PacketItemDecursed::readPacketData);
         clientHandlers.put(PacketIdClient.ENCHANTMENT_MODIFIED, PacketEnchantmentModified::readPacketData);
+        clientHandlers.put(PacketIdClient.ENCHANTMENT_TRANSFERRED, PacketEnchantmentTransfer::readPacketData);
     }
 
     public void onPacket(NetworkEvent.ServerCustomPayloadEvent event) {

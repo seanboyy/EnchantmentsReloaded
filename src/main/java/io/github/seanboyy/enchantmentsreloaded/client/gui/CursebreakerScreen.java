@@ -103,7 +103,7 @@ public class CursebreakerScreen extends ContainerScreen<CursebreakerContainer> {
         } else {
             this.blit(j1, k1, 0, 166, BUTTON_WIDTH, BUTTON_HEIGHT);
         }
-        this.minecraft.fontRenderer.drawString("Remove Curses", j1 + 5, k1 + 4, 0xF5F5F5);
+        this.minecraft.fontRenderer.drawString("Remove Curses", j1 + 6, k1 + 4, 0xF5F5F5);
     }
 
     @Override

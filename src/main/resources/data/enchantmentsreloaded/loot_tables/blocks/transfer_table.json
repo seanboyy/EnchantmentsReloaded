@@ -6,9 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "enchantmentsreloaded:cursebreaker"
+          "name": "enchantmentsreloaded:transfer_table"
         }
       ]
     }
   ]
 }
+1

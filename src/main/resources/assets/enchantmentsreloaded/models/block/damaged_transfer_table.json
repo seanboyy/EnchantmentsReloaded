@@ -1,0 +1,6 @@
+{
+  "parent": "enchantmentsreloaded:block/transfer_table",
+  "textures": {
+    "top": "enchantmentsreloaded:blocks/damaged_transfer_table_top"
+  }
+}

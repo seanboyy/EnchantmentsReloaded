@@ -1,8 +1,7 @@
 package io.github.seanboyy.enchantmentsreloaded.registers;
 
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
-import io.github.seanboyy.enchantmentsreloaded.objects.tileentity.CursebreakerTileEntity;
-import io.github.seanboyy.enchantmentsreloaded.objects.tileentity.EnchantmentCraftingTableTileEntity;
+import io.github.seanboyy.enchantmentsreloaded.objects.tileentity.*;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

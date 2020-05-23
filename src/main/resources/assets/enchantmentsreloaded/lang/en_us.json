@@ -1,9 +1,11 @@
 {
   "block.enchantmentsreloaded.cursebreaker": "Cursebreaker",
   "block.enchantmentsreloaded.enchantment_crafting_table": "Enchantment Crafting Table",
+  "block.enchantmentsreloaded.transfer_table": "Transfer Table",
 
-  "enchantmentsreloaded.container.cursebreaker": "Cursebreaker",
-  "enchantmentsreloaded.container.enchantment_crafting_table": "Enchantment Crafting Table",
+  "enchantmentsreloaded.container.cursebreaker": "Cursebreak",
+  "enchantmentsreloaded.container.enchantment_crafting_table": "Craft Enchantments",
+  "enchantmentsreloaded.container.transfer_table": "Transfer",
 
   "item.enchantmentsreloaded.enchantment_randomizer": "Randomizer",
   "item.enchantmentsreloaded.enchantment_adder": "Enchanter",

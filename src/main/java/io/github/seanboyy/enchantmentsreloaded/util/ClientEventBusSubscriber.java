@@ -3,6 +3,7 @@ package io.github.seanboyy.enchantmentsreloaded.util;
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.client.gui.CursebreakerScreen;
 import io.github.seanboyy.enchantmentsreloaded.client.gui.EnchantmentCraftingTableScreen;
+import io.github.seanboyy.enchantmentsreloaded.client.gui.TransferTableScreen;
 import io.github.seanboyy.enchantmentsreloaded.registers.Containers;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,5 +17,6 @@ public class ClientEventBusSubscriber {
     public static void clientSetup(FMLClientSetupEvent event) {
         ScreenManager.registerFactory(Containers.CURSEBREAKER.get(), CursebreakerScreen::new);
         ScreenManager.registerFactory(Containers.ENCHANTMENT_CRAFTING_TABLE.get(), EnchantmentCraftingTableScreen::new);
+        ScreenManager.registerFactory(Containers.TRANSFER_TABLE.get(), TransferTableScreen::new);
     }
 }

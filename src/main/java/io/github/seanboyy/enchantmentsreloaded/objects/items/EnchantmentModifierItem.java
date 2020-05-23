@@ -20,6 +20,11 @@ public class EnchantmentModifierItem extends Item {
     }
 
     @Override
+    public boolean hasEffect(ItemStack stack) {
+        return true;
+    }
+
+    @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         String informationMessage = "";
         switch(modifierType) {
@@ -33,7 +38,7 @@ public class EnchantmentModifierItem extends Item {
                 informationMessage = "Use this item in the Enchantment Crafting Table to level up a random levelable enchantment on the supplied enchanted item";
                 break;
             case RANDOMIZE:
-                informationMessage = "Use this item to completely change the enchantments on supplied item to a random number of enchantments with random levels";
+                informationMessage = "Use this item in the Enchantment Crafting Table to completely change the enchantments on supplied item to a random number of enchantments with random levels";
         }
         if(KeyboardHelper.isHoldingShift()){
             tooltip.add(new StringTextComponent(informationMessage));
