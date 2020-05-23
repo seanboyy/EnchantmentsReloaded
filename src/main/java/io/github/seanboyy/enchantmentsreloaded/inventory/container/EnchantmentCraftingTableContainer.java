@@ -128,7 +128,7 @@ public class EnchantmentCraftingTableContainer extends Container {
                     ForgeRegistries.ENCHANTMENTS.getValues().stream().filter(enchantment -> enchantment.canApply(enchantedItem)).forEach(enchantments::add);
                     enchantmentsOnItem.clear();
                     if(enchantments.size() > 0) {
-                        int randomEnchantmentCount = MathHelper.clamp(randomizer.nextInt(enchantments.size()), 1, enchantments.size());
+                        int randomEnchantmentCount = MathHelper.clamp(randomizer.nextInt(enchantments.size()), 1, randomizer.nextFloat() < 0.2F ? enchantments.size() : 3);
                         List<Integer> numbers = new ArrayList<>();
                         for (int i = 0; i < enchantments.size(); ++i) {
                             numbers.add(i);
