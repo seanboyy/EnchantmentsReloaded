@@ -10,6 +10,13 @@ Removes all curses from an item at the cost of a configurable amount (default 1/
 
 Place an enchanted item and one of the four modifier items into the table and the modifier will imbue the enchanted
 item with new properties.  
+### Enchantment Transfer Table
+![transfer table](https://seanboyy.github.io/images/EnchantmentsReloaded/reference/TransferTable.png)
+
+At the cost of an end rod, move all enchantments from one item to another. The only enchantments that will be put on the
+new item from the old item are enchantments that could be put on the new item naturally. This process destroys the old
+item. This block behaves the same way as an anvil: it's affected by physics, and it will break over time with repeated 
+usage.
 ## New Items
 ### Randomizer
 When combined with an enchanted item in the enchantment crafting table, this item completely randomizes the enchantments
