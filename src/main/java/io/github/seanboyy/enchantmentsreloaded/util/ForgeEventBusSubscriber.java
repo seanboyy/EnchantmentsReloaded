@@ -29,7 +29,7 @@ public class ForgeEventBusSubscriber {
         if(entity instanceof MonsterEntity) {
             if(world.rand.nextFloat() < EPIC_DROP_CHANCE) drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.LEVELER.get())));
             if(world.rand.nextFloat() < RARE_DROP_CHANCE) {
-                if(world.rand.nextBoolean()) drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.ENCHANTER.get())));
+                if(world.rand.nextFloat() < 0.25F) drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.ENCHANTER.get())));
                 else drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.DISENCHANTER.get())));
             }
             if(world.rand.nextFloat() < UNCOMMON_DROP_CHANCE) drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.RANDOMIZER.get())));
