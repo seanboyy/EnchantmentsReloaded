@@ -17,8 +17,8 @@ import java.util.Collection;
 @Mod.EventBusSubscriber(modid = EnchantmentsReloaded.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEventBusSubscriber {
     private static final float UNCOMMON_DROP_CHANCE = 0.125F;
-    private static final float RARE_DROP_CHANCE = UNCOMMON_DROP_CHANCE;
-    private static final float EPIC_DROP_CHANCE = RARE_DROP_CHANCE / 4;
+    private static final float RARE_DROP_CHANCE = UNCOMMON_DROP_CHANCE / 2;
+    private static final float EPIC_DROP_CHANCE = UNCOMMON_DROP_CHANCE / 4;
 
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {

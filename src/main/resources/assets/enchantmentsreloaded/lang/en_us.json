@@ -9,8 +9,8 @@
   "enchantmentsreloaded.container.enchantment_crafting_table": "Craft Enchantments",
   "enchantmentsreloaded.container.transfer_table": "Transfer",
 
-  "item.enchantmentsreloaded.enchantment_randomizer": "Randomizer",
-  "item.enchantmentsreloaded.enchantment_adder": "Enchanter",
-  "item.enchantmentsreloaded.enchantment_subtractor": "Disenchanter",
-  "item.enchantmentsreloaded.enchantment_leveler": "Leveler"
+  "item.enchantmentsreloaded.enchantment_randomizer": "Scroll of Randomization",
+  "item.enchantmentsreloaded.enchantment_adder": "Scroll of Addition",
+  "item.enchantmentsreloaded.enchantment_subtractor": "Scroll of Removal",
+  "item.enchantmentsreloaded.enchantment_leveler": "Scroll of Leveling"
 }
