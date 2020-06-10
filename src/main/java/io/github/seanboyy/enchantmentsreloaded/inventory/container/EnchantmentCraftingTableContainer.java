@@ -156,7 +156,10 @@ public class EnchantmentCraftingTableContainer extends Container {
                     if(!levelableEnchantmentsOnItem.isEmpty()) {
                         int randomEnchantmentToLevelUp = randomizer.nextInt(levelableEnchantmentsOnItem.size());
                         int randomAmountToLevelEnchantmentUpBy = randomizer.nextFloat() > 0.75F ? 2 : 1;
-                        int newEnchantmentLevel = MathHelper.clamp(levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getRight() + randomAmountToLevelEnchantmentUpBy, levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getLeft().getMinLevel(), levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getLeft().getMaxLevel());
+                        int newEnchantmentLevel = MathHelper.clamp(
+                                levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getRight() + randomAmountToLevelEnchantmentUpBy,
+                                levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getLeft().getMinLevel(),
+                                levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getLeft().getMaxLevel());
                         Pair<Enchantment, Integer> newEnchantmentWithNewLevel = Pair.of(levelableEnchantmentsOnItem.get(randomEnchantmentToLevelUp).getLeft(), newEnchantmentLevel);
                         enchantmentsOnItem.remove(newEnchantmentWithNewLevel.getLeft());
                         enchantmentsOnItem.put(newEnchantmentWithNewLevel.getLeft(), newEnchantmentWithNewLevel.getRight());

@@ -19,9 +19,9 @@ public class Config {
     public static float enchantment_transfer_use_break_chance;
 
     public static void bakeConfig() {
-        curse_removal_durability_factor = CLIENT.CURSE_DURABILITY_FACTOR.get();
+        curse_removal_durability_factor = (float)(double)CLIENT.CURSE_DURABILITY_FACTOR.get();
         curse_removal_durability_rounding_style = CLIENT.CURSE_ROUNDING_STYLE.get();
-        enchantment_transfer_use_break_chance = CLIENT.BREAK_CHANCE.get();
+        enchantment_transfer_use_break_chance = (float)(double)CLIENT.BREAK_CHANCE.get();
     }
 
     public static final class ClientConfig {

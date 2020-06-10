@@ -50,8 +50,6 @@ public class EnchantmentsReloaded {
         commonStart(modEventBus, networkHandler);
         clientStart(modEventBus, networkHandler);
         LOGGER.info("\tPacket handlers registered");
-        modEventBus.addListener(this::setup);
-        modEventBus.addListener(this::doClientStuff);
         Items.ITEMS.register(modEventBus);
         LOGGER.info("\tItems registered");
         Blocks.BLOCKS.register(modEventBus);
@@ -85,10 +83,6 @@ public class EnchantmentsReloaded {
     public static void onModConfig(final ModConfig.ModConfigEvent configEvent) {
         if(configEvent.getConfig().getSpec() == Config.CLIENT_SPEC) Config.bakeConfig();
     }
-
-    private void setup(final FMLCommonSetupEvent event) {}
-
-    private void doClientStuff(final FMLClientSetupEvent event) {}
 
     private static void commonStart(IEventBus modEventBus, NetworkHandler networkHandler) {
         modEventBus.addListener(EventPriority.NORMAL, false, FMLCommonSetupEvent.class, event -> networkHandler.createServerPacketHandler());
