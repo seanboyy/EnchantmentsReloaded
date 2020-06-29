@@ -74,12 +74,12 @@ public class TransferTableBlock extends FallingBlock {
     }
 
     @Override
-    public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState) {
+    public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity entity) {
         worldIn.playEvent(Constants.WorldEvents.ANVIL_LAND_SOUND, pos, 0);
     }
 
     @Override
-    public void onBroken(World worldIn, BlockPos pos) {
+    public void onBroken(World worldIn, BlockPos pos, FallingBlockEntity entity) {
         worldIn.playEvent(Constants.WorldEvents.ANVIL_DESTROYED_SOUND, pos, 0);
     }
 

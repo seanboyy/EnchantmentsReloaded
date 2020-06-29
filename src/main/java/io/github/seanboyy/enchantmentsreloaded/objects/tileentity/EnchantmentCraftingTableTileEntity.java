@@ -69,12 +69,12 @@ public class EnchantmentCraftingTableTileEntity extends TileEntity implements IN
         f += i;
     }
 
+    //TODO: make sure this still works
     @Override
-    @ParametersAreNonnullByDefault
-    public void read(CompoundNBT compound) {
-        super.read(compound);
-        if(compound.contains("CustomName", Constants.NBT.TAG_STRING)) {
-            this.customName = ITextComponent.Serializer.fromJson(compound.getString("CustomName"));
+    public void deserializeNBT(CompoundNBT nbt) {
+        super.deserializeNBT(nbt);
+        if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)){
+            this.customName = ITextComponent.Serializer.func_240643_a_(nbt.getString("CustomName"));
         }
     }
 

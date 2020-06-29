@@ -11,7 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class Items {
-    public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, EnchantmentsReloaded.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EnchantmentsReloaded.MOD_ID);
 
     public static final RegistryObject<Item> RANDOMIZER = ITEMS.register("enchantment_randomizer", () -> new EnchantmentModifierItem(new Item.Properties().group(ItemGroup.MISC).maxStackSize(16).rarity(Rarity.UNCOMMON), EnchantmentModifierType.RANDOMIZE));
     public static final RegistryObject<Item> ENCHANTER = ITEMS.register("enchantment_adder", () -> new EnchantmentModifierItem(new Item.Properties().group(ItemGroup.MISC).maxStackSize(16).rarity(Rarity.RARE), EnchantmentModifierType.ADD));

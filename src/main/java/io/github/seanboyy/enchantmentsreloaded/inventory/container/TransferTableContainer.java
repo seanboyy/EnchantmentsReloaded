@@ -40,7 +40,7 @@ public class TransferTableContainer extends Container {
     private final IWorldPosCallable worldPosCallable;
 
     public TransferTableContainer(final int id, final PlayerInventory playerInventoryIn, final PacketBuffer packetBuffer) {
-        this(id, playerInventoryIn, IWorldPosCallable.of(playerInventoryIn.player.world, playerInventoryIn.player.getPosition()));
+        this(id, playerInventoryIn, IWorldPosCallable.of(playerInventoryIn.player.world, playerInventoryIn.player.func_233580_cy_()));
     }
 
     public TransferTableContainer(final int id, final PlayerInventory playerInventoryIn, IWorldPosCallable worldPosCallable) {

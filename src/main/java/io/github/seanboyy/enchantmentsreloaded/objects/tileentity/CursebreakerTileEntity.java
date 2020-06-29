@@ -3,6 +3,7 @@ package io.github.seanboyy.enchantmentsreloaded.objects.tileentity;
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.registers.TileEntities;
 import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -71,10 +72,10 @@ public class CursebreakerTileEntity extends TileEntity implements INameable, ITi
 
     @Override
     @ParametersAreNonnullByDefault
-    public void read(CompoundNBT compound) {
-        super.read(compound);
-        if(compound.contains("CustomName", Constants.NBT.TAG_STRING)){
-            this.customName = ITextComponent.Serializer.fromJson(compound.getString("CustomName"));
+    public void func_230337_a_(BlockState state, CompoundNBT nbt) {
+        super.func_230337_a_(state, nbt);
+        if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)){
+            this.customName = ITextComponent.Serializer.func_240643_a_(nbt.getString("CustomName"));
         }
     }
 

@@ -20,11 +20,12 @@ public class ForgeEventBusSubscriber {
     private static final float RARE_DROP_CHANCE = UNCOMMON_DROP_CHANCE / 2;
     private static final float EPIC_DROP_CHANCE = UNCOMMON_DROP_CHANCE / 4;
 
+    //TODO: make sure this still works
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
         LivingEntity entity = event.getEntityLiving();
         World world = entity.getEntityWorld();
-        BlockPos pos = entity.getPosition();
+        BlockPos pos = entity.func_233580_cy_();
         Collection<ItemEntity> drops = event.getDrops();
         if(entity instanceof MonsterEntity) {
             if(world.rand.nextFloat() < EPIC_DROP_CHANCE) drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.LEVELER.get())));

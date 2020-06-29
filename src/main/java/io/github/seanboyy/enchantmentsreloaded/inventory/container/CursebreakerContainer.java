@@ -58,7 +58,7 @@ public class CursebreakerContainer extends Container {
         this.addSlot(new Slot(this.tableInventory, 1, 35, 47) {
             @Override
             public boolean isItemValid(ItemStack stack) {
-                return Tags.Items.NETHER_STARS.contains(stack.getItem());
+                return Tags.Items.NETHER_STARS.func_230235_a_(stack.getItem());
             }
         });
         for(int i = 0; i < 3; ++i) {
@@ -72,7 +72,7 @@ public class CursebreakerContainer extends Container {
     }
 
     public CursebreakerContainer(int id, PlayerInventory playerInventory, PacketBuffer packetBuffer) {
-        this(id, playerInventory, IWorldPosCallable.of(playerInventory.player.world, playerInventory.player.getPosition()));
+        this(id, playerInventory, IWorldPosCallable.of(playerInventory.player.world, playerInventory.player.func_233580_cy_()));
     }
 
     public boolean removeCurses(PlayerEntity playerIn) {

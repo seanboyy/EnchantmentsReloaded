@@ -5,9 +5,9 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import io.github.seanboyy.enchantmentsreloaded.objects.tileentity.CursebreakerTileEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.client.renderer.model.RenderMaterial;
+import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.client.renderer.entity.model.BookModel;
-import net.minecraft.client.renderer.model.Material;
 import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
@@ -15,7 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 public class CursebreakerTileEntityRenderer extends TileEntityRenderer<CursebreakerTileEntity> {
-    public static final Material TEXTURE_BOOK = new Material(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/enchanting_table_book"));
+    public static final RenderMaterial TEXTURE_BOOK = new RenderMaterial(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/enchanting_table_book"));
     private final BookModel modelBook = new BookModel();
 
     public CursebreakerTileEntityRenderer(TileEntityRendererDispatcher dispatcher) {

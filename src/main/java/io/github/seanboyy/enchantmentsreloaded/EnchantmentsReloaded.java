@@ -11,14 +11,12 @@ import io.github.seanboyy.enchantmentsreloaded.util.Config;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.storage.loot.LootPool;
-import net.minecraft.world.storage.loot.TableLootEntry;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -93,6 +91,6 @@ public class EnchantmentsReloaded {
     }
 
     public static final class Tags{
-        public static final Tag<Item> ENCHANTMENT_MODIFIERS = new ItemTags.Wrapper(new ResourceLocation(EnchantmentsReloaded.MOD_ID, "enchantment_modifiers"));
+        public static final ITag<Item> ENCHANTMENT_MODIFIERS = ItemTags.makeWrapperTag(new ResourceLocation(EnchantmentsReloaded.MOD_ID, "enchantment_modifiers").toString());
     }
 }
