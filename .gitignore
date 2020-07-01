@@ -15,9 +15,8 @@ out
 
 # gradle
 build
-.gradle
 gradle
-*.gradle
+.gradle
 gradlew.bat
 gradlew
 gradle.properties
