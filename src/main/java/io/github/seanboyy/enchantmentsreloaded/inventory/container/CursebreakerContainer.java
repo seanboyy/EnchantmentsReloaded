@@ -101,7 +101,7 @@ public class CursebreakerContainer extends Container {
                 ItemStack decursedItem = new ItemStack(cursedItem.getItem(), cursedItem.getCount());
                 EnchantmentHelper.setEnchantments(changedEnchantments, decursedItem);
                 if(!playerIn.abilities.isCreativeMode) {
-                    float newDamage = cursedItem.getMaxDamage() * Config.curse_removal_durability_factor * finalCurseCount;
+                    float newDamage = cursedItem.getMaxDamage() * (float)Config.curse_removal_durability_factor * finalCurseCount;
                     int damageChangeResult = Config.curse_removal_durability_rounding_style ? MathHelper.ceil(newDamage) : MathHelper.floor(newDamage);
                     decursedItem.setDamage(damageChangeResult);
                     fuel.shrink(1);

@@ -11,9 +11,12 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+@OnlyIn(Dist.CLIENT)
 public class EnchantmentCraftingTableScreen extends ContainerScreen<EnchantmentCraftingTableContainer> {
     private static final ResourceLocation ENCHANTMENT_CRAFTING_TABLE_GUI_TEXTURE = new ResourceLocation(EnchantmentsReloaded.MOD_ID, "textures/gui/container/enchantment_crafting_table.png");
     private static final int BUTTON_BEGIN_X = 45;
