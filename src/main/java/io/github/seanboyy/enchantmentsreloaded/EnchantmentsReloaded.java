@@ -17,6 +17,8 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootPool;
 import net.minecraft.world.storage.loot.TableLootEntry;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -74,6 +76,7 @@ public class EnchantmentsReloaded {
     }
 
     @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
     public static void onRegisterTileEntities(final RegistryEvent.Register<TileEntityType<?>> event) {
         ClientRegistry.bindTileEntityRenderer(TileEntities.CURSEBREAKER.get(), CursebreakerTileEntityRenderer::new);
         ClientRegistry.bindTileEntityRenderer(TileEntities.ENCHANTMENT_CRAFTING_TABLE.get(), EnchantmentCraftingTableTileEntityRenderer::new);
