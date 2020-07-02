@@ -79,7 +79,7 @@ public class CursebreakerScreen extends ContainerScreen<CursebreakerContainer> {
         float f3 = MathHelper.clamp(MathHelper.lerp(partialTicks, this.oFlip, this.flip) + 0.25F, 0F, 1F);
         float f4 = MathHelper.clamp(MathHelper.lerp(partialTicks, this.oFlip, this.flip) + 0.75F, 0F, 1F);
         RenderSystem.enableRescaleNormal();
-        MODEL_BOOK.func_228247_a_(0F, f3, f4, f1);
+        MODEL_BOOK.setBookState(0F, f3, f4, f1);
         IRenderTypeBuffer.Impl iRenderTypeBuffer$impl = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
         IVertexBuilder iVertexBuilder = iRenderTypeBuffer$impl.getBuffer(MODEL_BOOK.getRenderType(CURSEBREAKER_TABLE_BOOK_TEXTURE));
         MODEL_BOOK.render(matrixStack, iVertexBuilder, 15728880, OverlayTexture.NO_OVERLAY, 1F, 1F, 1F, 1F);
