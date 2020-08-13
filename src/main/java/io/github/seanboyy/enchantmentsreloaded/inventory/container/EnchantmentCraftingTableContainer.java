@@ -62,7 +62,7 @@ public class EnchantmentCraftingTableContainer extends Container {
         this.addSlot(new Slot(this.tableInventory, 1, 90, 20) {
             @Override
             public boolean isItemValid(ItemStack stack) {
-                return EnchantmentsReloaded.Tags.ENCHANTMENT_MODIFIERS.func_230235_a_(stack.getItem());
+                return EnchantmentsReloaded.Tags.ENCHANTMENT_MODIFIERS.contains(stack.getItem());
             }
         });
         for(int i = 0; i < 3; ++i) {
@@ -76,7 +76,7 @@ public class EnchantmentCraftingTableContainer extends Container {
     }
 
     public EnchantmentCraftingTableContainer(int id, PlayerInventory playerInventoryIn, PacketBuffer data) {
-        this(id, playerInventoryIn, IWorldPosCallable.of(playerInventoryIn.player.world, playerInventoryIn.player.func_233580_cy_()));
+        this(id, playerInventoryIn, IWorldPosCallable.of(playerInventoryIn.player.world, playerInventoryIn.player.getPosition()));
     }
 
     public EnchantmentModifierType getModifierType() {

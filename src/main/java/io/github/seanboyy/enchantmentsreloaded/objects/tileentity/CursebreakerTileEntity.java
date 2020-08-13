@@ -72,8 +72,8 @@ public class CursebreakerTileEntity extends TileEntity implements INameable, ITi
 
     @Override
     @ParametersAreNonnullByDefault
-    public void func_230337_a_(BlockState state, CompoundNBT nbt) {
-        super.func_230337_a_(state, nbt);
+    public void read(BlockState state, CompoundNBT nbt) {
+        super.read(state, nbt);
         if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)){
             this.customName = ITextComponent.Serializer.func_240643_a_(nbt.getString("CustomName"));
         }

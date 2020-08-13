@@ -44,24 +44,24 @@ public class CursebreakerScreen extends ContainerScreen<CursebreakerContainer> {
     }
 
     @Override
-    public void func_231023_e_() {
-        super.func_231023_e_();
+    public void tick() {
+        super.tick();
         this.tickBook();
     }
 
     @Override
-    protected void func_230450_a_(MatrixStack matrixStack, float partialTicks, int mouseX, int mouseY) {
+    protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int mouseX, int mouseY) {
         RenderHelper.setupGuiFlatDiffuseLighting();
         RenderSystem.color4f(1F, 1F, 1F, 1F);
-        this.field_230706_i_.getTextureManager().bindTexture(CURSEBREAKER_TABLE_GUI_TEXTURE);
-        int i = (this.field_230708_k_ - this.xSize) / 2;
-        int j = (this.field_230709_l_ - this.ySize) / 2;
-        this.func_238474_b_(matrixStack, i, j, 0, 0, this.xSize, this.ySize);
+        this.minecraft.getTextureManager().bindTexture(CURSEBREAKER_TABLE_GUI_TEXTURE);
+        int i = (this.width - this.xSize) / 2;
+        int j = (this.height - this.ySize) / 2;
+        this.blit(matrixStack, i, j, 0, 0, this.xSize, this.ySize);
         RenderSystem.matrixMode(GL11.GL_PROJECTION);
         RenderSystem.pushMatrix();
         RenderSystem.loadIdentity();
-        int k = (int)this.field_230706_i_.getMainWindow().getGuiScaleFactor();
-        RenderSystem.viewport((this.field_230708_k_ - 320)/ 2 * k, (this.field_230709_l_ - 240) / 2 * k, 320 * k, 240 * k);
+        int k = (int)this.minecraft.getMainWindow().getGuiScaleFactor();
+        RenderSystem.viewport((this.width - 320)/ 2 * k, (this.height - 240) / 2 * k, 320 * k, 240 * k);
         RenderSystem.translatef(-0.34F, 0.23F, 0F);
         RenderSystem.multMatrix(Matrix4f.perspective(90D, 1.3333334F, 9F, 80F));
         RenderSystem.matrixMode(GL11.GL_MODELVIEW);
@@ -81,58 +81,58 @@ public class CursebreakerScreen extends ContainerScreen<CursebreakerContainer> {
         float f3 = MathHelper.clamp(MathHelper.lerp(partialTicks, this.oFlip, this.flip) + 0.25F, 0F, 1F);
         float f4 = MathHelper.clamp(MathHelper.lerp(partialTicks, this.oFlip, this.flip) + 0.75F, 0F, 1F);
         RenderSystem.enableRescaleNormal();
-        MODEL_BOOK.func_228247_a_(0F, f3, f4, f1);
+        MODEL_BOOK.setBookState(0F, f3, f4, f1);
         IRenderTypeBuffer.Impl iRenderTypeBuffer$impl = IRenderTypeBuffer.getImpl(Tessellator.getInstance().getBuffer());
         IVertexBuilder iVertexBuilder = iRenderTypeBuffer$impl.getBuffer(MODEL_BOOK.getRenderType(CURSEBREAKER_TABLE_BOOK_TEXTURE));
         MODEL_BOOK.render(matrixStack, iVertexBuilder, 15728880, OverlayTexture.NO_OVERLAY, 1F, 1F, 1F, 1F);
         iRenderTypeBuffer$impl.finish();
         matrixStack.pop();
         RenderSystem.matrixMode(GL11.GL_PROJECTION);
-        RenderSystem.viewport(0, 0, this.field_230706_i_.getMainWindow().getFramebufferWidth(), this.field_230706_i_.getMainWindow().getFramebufferHeight());
+        RenderSystem.viewport(0, 0, this.minecraft.getMainWindow().getFramebufferWidth(), this.minecraft.getMainWindow().getFramebufferHeight());
         RenderSystem.popMatrix();
         RenderSystem.matrixMode(GL11.GL_MODELVIEW);
         RenderHelper.setupGui3DDiffuseLighting();
         RenderSystem.color4f(1F, 1F, 1F, 1F);
         int j1 = i + BUTTON_BEGIN_X;
         int k1 = j + BUTTON_BEGIN_Y;
-        this.field_230706_i_.getTextureManager().bindTexture(CURSEBREAKER_TABLE_GUI_TEXTURE);
+        this.minecraft.getTextureManager().bindTexture(CURSEBREAKER_TABLE_GUI_TEXTURE);
         RenderSystem.color4f(1F, 1F, 1F, 1F);
         int k2 = mouseX - j1;
         int l2 = mouseY - k1;
         if(k2 >= 0 && l2 >= 0 && k2 < BUTTON_WIDTH && l2 < BUTTON_HEIGHT) {
-            this.func_238474_b_(matrixStack, j1, k1, 0, 198, BUTTON_WIDTH, BUTTON_HEIGHT);
+            this.blit(matrixStack, j1, k1, 0, 198, BUTTON_WIDTH, BUTTON_HEIGHT);
         } else {
-            this.func_238474_b_(matrixStack, j1, k1, 0, 166, BUTTON_WIDTH, BUTTON_HEIGHT);
+            this.blit(matrixStack, j1, k1, 0, 166, BUTTON_WIDTH, BUTTON_HEIGHT);
         }
-        this.field_230706_i_.fontRenderer.func_238405_a_(matrixStack,"Remove Curses", j1 + 6, k1 + 4, 0xF5F5F5);
+        this.minecraft.fontRenderer.drawString(matrixStack,"Remove Curses", j1 + 6, k1 + 4, 0xF5F5F5);
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    protected void func_230451_b_(MatrixStack p_230451_1_, int p_230451_2_, int p_230451_3_) {
-        this.field_230712_o_.func_238422_b_(p_230451_1_, this.field_230704_d_, 12F, 5F, 4210752);
-        this.field_230712_o_.func_238422_b_(p_230451_1_, this.playerInventory.getDisplayName(), 8F, (float)(this.ySize - 96 + 2), 4210752);
+    protected void drawGuiContainerForegroundLayer(MatrixStack p_230451_1_, int p_230451_2_, int p_230451_3_) {
+        this.font.drawString(p_230451_1_, this.title.getString(), 12F, 5F, 4210752);
+        this.font.drawString(p_230451_1_, this.playerInventory.getDisplayName().getString(), 8F, (float)(this.ySize - 96 + 2), 4210752);
     }
 
     @Override
-    public boolean func_231044_a_(double mouseX, double mouseY, int p_mouseClicked_5_) {
-        int i = (this.field_230708_k_ - this.xSize) / 2;
-        int j = (this.field_230709_l_ - this.ySize) / 2;
+    public boolean mouseClicked(double mouseX, double mouseY, int p_mouseClicked_5_) {
+        int i = (this.width - this.xSize) / 2;
+        int j = (this.height - this.ySize) / 2;
         double d0 = mouseX - (i + BUTTON_BEGIN_X);
         double d1 = mouseY - (j + BUTTON_BEGIN_Y);
-        if(d0 >= 0 && d1 >= 0 && d0 < BUTTON_WIDTH && d1 < BUTTON_HEIGHT && this.container.removeCurses(this.field_230706_i_.player)) {
+        if(d0 >= 0 && d1 >= 0 && d0 < BUTTON_WIDTH && d1 < BUTTON_HEIGHT && this.container.removeCurses(this.minecraft.player)) {
             Network.sendPacketToServer(new PacketItemDecursed());
             return true;
         }
-        return super.func_231044_a_(mouseX, mouseY, p_mouseClicked_5_);
+        return super.mouseClicked(mouseX, mouseY, p_mouseClicked_5_);
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void func_230430_a_(MatrixStack p_230430_1_, int p_230430_2_, int p_230430_3_, float p_230430_4_) {
-        this.func_230446_a_(p_230430_1_);
-        super.func_230430_a_(p_230430_1_, p_230430_2_, p_230430_3_, p_230430_4_);
-        this.func_230459_a_(p_230430_1_, p_230430_2_, p_230430_3_);
+    public void render(MatrixStack p_230430_1_, int p_230430_2_, int p_230430_3_, float p_230430_4_) {
+        this.renderBackground(p_230430_1_);
+        super.render(p_230430_1_, p_230430_2_, p_230430_3_, p_230430_4_);
+        this.renderHoveredTooltip(p_230430_1_, p_230430_2_, p_230430_3_);
     }
 
     private void tickBook() {

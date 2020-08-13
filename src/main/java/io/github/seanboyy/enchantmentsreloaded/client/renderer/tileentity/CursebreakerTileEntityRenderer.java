@@ -41,9 +41,9 @@ public class CursebreakerTileEntityRenderer extends TileEntityRenderer<Cursebrea
         float f4 = MathHelper.frac(f3 + 0.25F) * 1.6F - 0.3F;
         float f5 = MathHelper.frac(f3 + 0.75F) * 1.6F - 0.3F;
         float f6 = MathHelper.lerp(partialTicks, tileEntityIn.k, tileEntityIn.j);
-        this.modelBook.func_228247_a_(f, MathHelper.clamp(f4, 0F, 1F), MathHelper.clamp(f5, 0F, 1F), f6);
+        this.modelBook.setBookState(f, MathHelper.clamp(f4, 0F, 1F), MathHelper.clamp(f5, 0F, 1F), f6);
         IVertexBuilder vertexBuilder = TEXTURE_BOOK.getBuffer(bufferIn, RenderType::getEntitySolid);
-        this.modelBook.func_228249_b_(matrixStackIn, vertexBuilder, combinedLightIn, combinedOverlayIn, 1F, 1F, 1F, 1F);
+        this.modelBook.renderAll(matrixStackIn, vertexBuilder, combinedLightIn, combinedOverlayIn, 1F, 1F, 1F, 1F);
         matrixStackIn.pop();
     }
 }
