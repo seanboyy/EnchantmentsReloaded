@@ -25,7 +25,7 @@ public class ForgeEventBusSubscriber {
     public static void onLivingDrops(LivingDropsEvent event) {
         LivingEntity entity = event.getEntityLiving();
         World world = entity.getEntityWorld();
-        BlockPos pos = entity.func_233580_cy_();
+        BlockPos pos = entity.getPosition();
         Collection<ItemEntity> drops = event.getDrops();
         if(entity instanceof MonsterEntity) {
             if(world.rand.nextFloat() < EPIC_DROP_CHANCE) drops.add(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.LEVELER.get())));

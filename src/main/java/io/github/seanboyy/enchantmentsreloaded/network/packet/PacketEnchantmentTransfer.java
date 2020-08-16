@@ -1,5 +1,6 @@
 package io.github.seanboyy.enchantmentsreloaded.network.packet;
 
+import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.network.IPacketId;
 import io.github.seanboyy.enchantmentsreloaded.network.PacketIdClient;
 import net.minecraft.entity.player.PlayerEntity;
