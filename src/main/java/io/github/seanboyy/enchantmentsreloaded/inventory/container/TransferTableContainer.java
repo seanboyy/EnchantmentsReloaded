@@ -103,9 +103,14 @@ public class TransferTableContainer extends Container {
             Map<Enchantment, Integer> enchantmentsOnSource = EnchantmentHelper.getEnchantments(source);
             this.worldPosCallable.consume((world, pos) -> {
                 Map<Enchantment, Integer> enchantmentsToPutOnDest = new LinkedHashMap<>();
-                enchantmentsOnSource.forEach((enchantment, level) -> {
-                   if(enchantment.canApply(dest)) enchantmentsToPutOnDest.put(enchantment, level);
-                });
+                if(dest.getItem() != Items.BOOK) {
+                    enchantmentsOnSource.forEach((enchantment, level) -> {
+                        if (enchantment.canApply(dest)) enchantmentsToPutOnDest.put(enchantment, level);
+                    });
+                }
+                else {
+                    enchantmentsOnSource.forEach(enchantmentsToPutOnDest::put);
+                }
                 if(!playerIn.abilities.isCreativeMode) {
                     fuel.shrink(1);
                     if(fuel.isEmpty()) this.tableInventory.setInventorySlotContents(2, ItemStack.EMPTY);
@@ -123,9 +128,16 @@ public class TransferTableContainer extends Container {
                         }
                     }
                 }
-                EnchantmentHelper.setEnchantments(enchantmentsToPutOnDest, dest);
                 this.tableInventory.setInventorySlotContents(0, ItemStack.EMPTY);
-                this.tableInventory.setInventorySlotContents(1, dest);
+                if(dest.getItem() != Items.BOOK) {
+                    EnchantmentHelper.setEnchantments(enchantmentsToPutOnDest, dest);
+                    this.tableInventory.setInventorySlotContents(1, dest);
+                }
+                else {
+                    ItemStack newDest = new ItemStack(Items.ENCHANTED_BOOK);
+                    EnchantmentHelper.setEnchantments(enchantmentsToPutOnDest, newDest);
+                    this.tableInventory.setInventorySlotContents(1, newDest);
+                }
                 this.tableInventory.markDirty();
                 this.onCraftMatrixChanged(this.tableInventory);
                 world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.BLOCKS, 1F, world.rand.nextFloat() * 0.1F + 0.9F);

@@ -7,6 +7,7 @@ import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.inventory.container.CursebreakerContainer;
 import io.github.seanboyy.enchantmentsreloaded.network.Network;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketItemDecursed;
+import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketItemDecursedRequest;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.entity.model.BookModel;
@@ -119,7 +120,7 @@ public class CursebreakerScreen extends ContainerScreen<CursebreakerContainer> {
         double d0 = mouseX - (i + BUTTON_BEGIN_X);
         double d1 = mouseY - (j + BUTTON_BEGIN_Y);
         if(d0 >= 0 && d1 >= 0 && d0 < BUTTON_WIDTH && d1 < BUTTON_HEIGHT && this.container.removeCurses(this.minecraft.player)) {
-            Network.sendPacketToServer(new PacketItemDecursed());
+            Network.sendPacketToServer(new PacketItemDecursedRequest());
             return true;
         }
         return super.mouseClicked(mouseX, mouseY, p_mouseClicked_5_);

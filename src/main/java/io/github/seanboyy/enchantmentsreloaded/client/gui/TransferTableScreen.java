@@ -5,6 +5,7 @@ import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.inventory.container.TransferTableContainer;
 import io.github.seanboyy.enchantmentsreloaded.network.Network;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentTransfer;
+import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentTransferRequest;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.PlayerInventory;
@@ -59,7 +60,7 @@ public class TransferTableScreen extends ContainerScreen<TransferTableContainer>
         double d0 = mouseX - (i + BUTTON_BEGIN_X);
         double d1 = mouseY - (j + BUTTON_BEGIN_Y);
         if(d0 >= 0 && d1 >= 0 && d0 < BUTTON_WIDTH && d1 < BUTTON_HEIGHT && this.container.transferEnchantments(this.minecraft.player)) {
-            Network.sendPacketToServer(new PacketEnchantmentTransfer());
+            Network.sendPacketToServer(new PacketEnchantmentTransferRequest());
             return true;
         }
         return super.mouseClicked(mouseX, mouseY, p_mouseClicked_5_);

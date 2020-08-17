@@ -5,6 +5,7 @@ import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.inventory.container.EnchantmentCraftingTableContainer;
 import io.github.seanboyy.enchantmentsreloaded.network.Network;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentModified;
+import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentModifyRequest;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.PlayerInventory;
@@ -62,7 +63,7 @@ public class EnchantmentCraftingTableScreen extends ContainerScreen<EnchantmentC
         double d1 = mouseY - (j + BUTTON_BEGIN_Y);
         if(d0 >= 0 && d1 >= 0 && d0 < BUTTON_WIDTH && d1 < BUTTON_HEIGHT) {
             if(this.container.performModification(this.minecraft.player, this.container.getModifierType())) {
-                Network.sendPacketToServer(new PacketEnchantmentModified(this.container.getModifierType()));
+                Network.sendPacketToServer(new PacketEnchantmentModifyRequest(this.container.getModifierType()));
                 return true;
             }
         }
