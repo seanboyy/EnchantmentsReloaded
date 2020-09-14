@@ -29,16 +29,16 @@ public class EnchantmentModifierItem extends Item {
         String informationMessage = "";
         switch(modifierType) {
             case ADD:
-                informationMessage = "Use this item in the Enchantment Crafting Table to add a random enchantment that could enchant the supplied enchanted item";
+                informationMessage = "Use this item in the Enchantment Crafting Table to add\n a random enchantment that could enchant the supplied enchanted item";
                 break;
             case SUBTRACT:
-                informationMessage = "Use this item in the Enchantment Crafting Table to remove a random enchantment from the supplied enchanted item, except for curses";
+                informationMessage = "Use this item in the Enchantment Crafting Table to remove\n a random enchantment from the supplied enchanted item, except for curses";
                 break;
             case LEVEL:
-                informationMessage = "Use this item in the Enchantment Crafting Table to level up a random levelable enchantment on the supplied enchanted item";
+                informationMessage = "Use this item in the Enchantment Crafting Table to level up\n a random levelable enchantment on the supplied enchanted item";
                 break;
             case RANDOMIZE:
-                informationMessage = "Use this item in the Enchantment Crafting Table to completely change the enchantments on supplied item to a random number of enchantments with random levels";
+                informationMessage = "Use this item in the Enchantment Crafting Table to completely change\n the enchantments on supplied item to a random number of enchantments with random levels";
         }
         if(KeyboardHelper.isHoldingShift()){
             tooltip.add(new StringTextComponent(informationMessage));
