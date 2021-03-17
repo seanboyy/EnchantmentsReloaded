@@ -12,4 +12,5 @@ public class TileEntities {
 
     public static final RegistryObject<TileEntityType<CursebreakerTileEntity>> CURSEBREAKER = TILE_ENTITIES.register("cursebreaker", () -> TileEntityType.Builder.create(CursebreakerTileEntity::new, Blocks.CURSEBREAKER.get()).build(null));
     public static final RegistryObject<TileEntityType<EnchantmentCraftingTableTileEntity>> ENCHANTMENT_CRAFTING_TABLE = TILE_ENTITIES.register("enchantment_crafting_table", () -> TileEntityType.Builder.create(EnchantmentCraftingTableTileEntity::new, Blocks.ENCHANTMENT_CRAFTING_TABLE.get()).build(null));
+    public static final RegistryObject<TileEntityType<CopyTableTileEntity>> COPY_TABLE = TILE_ENTITIES.register("copy_table", () -> TileEntityType.Builder.create(CopyTableTileEntity::new, Blocks.COPY_TABLE.get()).build(null));
 }

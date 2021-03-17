@@ -3,6 +3,7 @@ package io.github.seanboyy.enchantmentsreloaded.objects.tileentity;
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.registers.TileEntities;
 import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -69,12 +70,11 @@ public class EnchantmentCraftingTableTileEntity extends TileEntity implements IN
         f += i;
     }
 
-    //TODO: make sure this still works
     @Override
-    public void deserializeNBT(CompoundNBT nbt) {
-        super.deserializeNBT(nbt);
-        if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)){
-            this.customName = ITextComponent.Serializer.func_240643_a_(nbt.getString("CustomName"));
+    public void read(BlockState state, CompoundNBT nbt) {
+        super.read(state, nbt);
+        if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)) {
+            this.customName = ITextComponent.Serializer.getComponentFromJson(nbt.getString("CustomName"));
         }
     }
 

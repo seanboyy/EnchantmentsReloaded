@@ -15,4 +15,5 @@ public class Blocks {
     public static final RegistryObject<Block> TRANSFER_TABLE = BLOCKS.register("transfer_table", () -> new TransferTableBlock(Block.Properties.from(net.minecraft.block.Blocks.ANVIL)));
     public static final RegistryObject<Block> TRANSFER_TABLE_CHIPPED = BLOCKS.register("chipped_transfer_table", () -> new TransferTableBlock(Block.Properties.from(net.minecraft.block.Blocks.CHIPPED_ANVIL)));
     public static final RegistryObject<Block> TRANSFER_TABLE_DAMAGED = BLOCKS.register("damaged_transfer_table", () -> new TransferTableBlock(Block.Properties.from(net.minecraft.block.Blocks.DAMAGED_ANVIL)));
+    public static final RegistryObject<Block> COPY_TABLE = BLOCKS.register("copy_table", () -> new CopyTableBlock(Block.Properties.from(net.minecraft.block.Blocks.ENCHANTING_TABLE)));
 }

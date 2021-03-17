@@ -1,6 +1,7 @@
 package io.github.seanboyy.enchantmentsreloaded.util;
 
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
+import io.github.seanboyy.enchantmentsreloaded.client.gui.CopyTableScreen;
 import io.github.seanboyy.enchantmentsreloaded.client.gui.CursebreakerScreen;
 import io.github.seanboyy.enchantmentsreloaded.client.gui.EnchantmentCraftingTableScreen;
 import io.github.seanboyy.enchantmentsreloaded.client.gui.TransferTableScreen;
@@ -18,5 +19,6 @@ public class ClientEventBusSubscriber {
         ScreenManager.registerFactory(Containers.CURSEBREAKER.get(), CursebreakerScreen::new);
         ScreenManager.registerFactory(Containers.ENCHANTMENT_CRAFTING_TABLE.get(), EnchantmentCraftingTableScreen::new);
         ScreenManager.registerFactory(Containers.TRANSFER_TABLE.get(), TransferTableScreen::new);
+        ScreenManager.registerFactory(Containers.COPY_TABLE.get(), CopyTableScreen::new);
     }
 }

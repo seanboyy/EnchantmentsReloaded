@@ -19,14 +19,14 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Random;
 
 @MethodsReturnNonnullByDefault
-public class CursebreakerTileEntity extends TileEntity implements INameable, ITickableTileEntity {
+public class CopyTableTileEntity extends TileEntity implements INameable, ITickableTileEntity{
     public int tickAccumulator;
     public float f, g, h, i, j, k, l, m, n;
     private static final Random random = new Random();
     private ITextComponent customName;
 
-    public CursebreakerTileEntity() {
-        super(TileEntities.CURSEBREAKER.get());
+    public CopyTableTileEntity() {
+        super(TileEntities.COPY_TABLE.get());
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CursebreakerTileEntity extends TileEntity implements INameable, ITi
         if(playerEntity != null) {
             double d0 = playerEntity.getPosX() - (this.pos.getX() + 0.5);
             double d1 = playerEntity.getPosZ() - (this.pos.getZ() + 0.5);
-            n = (float)MathHelper.atan2(d1, d0);
+            n = (float) MathHelper.atan2(d1, d0);
             j += 0.1F;
             if(j < 0.5F || random.nextInt(40) == 0) {
                 float f1 = h;
@@ -71,7 +71,6 @@ public class CursebreakerTileEntity extends TileEntity implements INameable, ITi
     }
 
     @Override
-    @ParametersAreNonnullByDefault
     public void read(BlockState state, CompoundNBT nbt) {
         super.read(state, nbt);
         if(nbt.contains("CustomName", Constants.NBT.TAG_STRING)) {
@@ -91,14 +90,16 @@ public class CursebreakerTileEntity extends TileEntity implements INameable, ITi
 
     @Override
     public ITextComponent getName() {
-        return this.customName != null ? this.customName : new TranslationTextComponent(EnchantmentsReloaded.MOD_ID + ".container.cursebreaker");
+        return this.customName != null ? this.customName : new TranslationTextComponent(EnchantmentsReloaded.MOD_ID + ".container.copy_table");
     }
 
-    public void setCustomName(@Nullable ITextComponent name) {
-        this.customName = name;
+    public void setCustomName(@Nullable ITextComponent customName) {
+        this.customName = customName;
     }
 
+    @Nullable
+    @Override
     public ITextComponent getCustomName() {
-        return this.customName;
+        return customName;
     }
 }

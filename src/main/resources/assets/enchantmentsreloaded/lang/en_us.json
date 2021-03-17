@@ -1,10 +1,12 @@
 {
+  "block.enchantmentsreloaded.copy_table": "Copy Table",
   "block.enchantmentsreloaded.cursebreaker": "Cursebreaker",
   "block.enchantmentsreloaded.enchantment_crafting_table": "Enchantment Crafting Table",
   "block.enchantmentsreloaded.transfer_table": "Transfer Table",
   "block.enchantmentsreloaded.chipped_transfer_table": "Chipped Transfer Table",
   "block.enchantmentsreloaded.damaged_transfer_table": "Damaged Transfer Table",
 
+  "enchantmentsreloaded.container.copy_table": "Copy Items",
   "enchantmentsreloaded.container.cursebreaker": "Cursebreak",
   "enchantmentsreloaded.container.enchantment_crafting_table": "Craft Enchantments",
   "enchantmentsreloaded.container.transfer_table": "Transfer",

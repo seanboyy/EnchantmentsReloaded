@@ -19,6 +19,7 @@ public class PacketHandler {
         serverHandlers.put(PacketIdServer.ITEM_DECURSE_REQUEST, PacketItemDecursedRequest::readPacketData);
         serverHandlers.put(PacketIdServer.ENCHANTMENT_MODIFY_REQUEST, PacketEnchantmentModifyRequest::readPacketData);
         serverHandlers.put(PacketIdServer.ENCHANTMENT_TRANSFERRED_REQUEST, PacketEnchantmentTransferRequest::readPacketData);
+        serverHandlers.put(PacketIdServer.ITEM_COPIED_REQUEST, PacketItemCopiedRequest::readPacketData);
     }
 
     public void onPacket(NetworkEvent.ClientCustomPayloadEvent event) {

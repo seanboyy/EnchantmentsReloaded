@@ -1,5 +1,6 @@
 package io.github.seanboyy.enchantmentsreloaded;
 
+import io.github.seanboyy.enchantmentsreloaded.client.renderer.tileentity.CopyTableTileEntityRenderer;
 import io.github.seanboyy.enchantmentsreloaded.client.renderer.tileentity.CursebreakerTileEntityRenderer;
 import io.github.seanboyy.enchantmentsreloaded.client.renderer.tileentity.EnchantmentCraftingTableTileEntityRenderer;
 import io.github.seanboyy.enchantmentsreloaded.network.NetworkHandler;
@@ -78,6 +79,7 @@ public class EnchantmentsReloaded {
     public static void onRegisterTileEntities(final RegistryEvent.Register<TileEntityType<?>> event) {
         ClientRegistry.bindTileEntityRenderer(TileEntities.CURSEBREAKER.get(), CursebreakerTileEntityRenderer::new);
         ClientRegistry.bindTileEntityRenderer(TileEntities.ENCHANTMENT_CRAFTING_TABLE.get(), EnchantmentCraftingTableTileEntityRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(TileEntities.COPY_TABLE.get(), CopyTableTileEntityRenderer::new);
     }
 
     @SubscribeEvent
