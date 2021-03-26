@@ -3,7 +3,6 @@ package io.github.seanboyy.enchantmentsreloaded.client.renderer.tileentity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import io.github.seanboyy.enchantmentsreloaded.objects.tileentity.CopyTableTileEntity;
-import io.github.seanboyy.enchantmentsreloaded.objects.tileentity.EnchantmentCraftingTableTileEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.model.BookModel;
