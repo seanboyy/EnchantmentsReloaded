@@ -6,7 +6,6 @@ import com.mojang.blaze3d.vertex.IVertexBuilder;
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.inventory.container.CursebreakerContainer;
 import io.github.seanboyy.enchantmentsreloaded.network.Network;
-import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketItemDecursed;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketItemDecursedRequest;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.*;

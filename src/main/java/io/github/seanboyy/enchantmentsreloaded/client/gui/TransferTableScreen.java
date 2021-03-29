@@ -5,7 +5,6 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import io.github.seanboyy.enchantmentsreloaded.inventory.container.TransferTableContainer;
 import io.github.seanboyy.enchantmentsreloaded.network.Network;
-import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentTransfer;
 import io.github.seanboyy.enchantmentsreloaded.network.packet.PacketEnchantmentTransferRequest;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.RenderHelper;

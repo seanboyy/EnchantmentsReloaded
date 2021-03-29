@@ -1,7 +1,6 @@
 package io.github.seanboyy.enchantmentsreloaded.objects.blocks;
 
 import io.github.seanboyy.enchantmentsreloaded.inventory.container.TransferTableContainer;
-import io.github.seanboyy.enchantmentsreloaded.util.Config;
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.block.*;
 import net.minecraft.entity.item.FallingBlockEntity;

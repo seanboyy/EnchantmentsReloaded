@@ -20,7 +20,6 @@ public class ForgeEventBusSubscriber {
     private static final float RARE_DROP_CHANCE = UNCOMMON_DROP_CHANCE / 2;
     private static final float EPIC_DROP_CHANCE = UNCOMMON_DROP_CHANCE / 4;
 
-    //TODO: make sure this still works
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
         LivingEntity entity = event.getEntityLiving();

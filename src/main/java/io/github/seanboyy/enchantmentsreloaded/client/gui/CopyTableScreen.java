@@ -48,7 +48,6 @@ public class CopyTableScreen extends ContainerScreen<CopyTableContainer> {
         } else {
             this.blit(matrixStack, j1, k1, 0, 166, BUTTON_WIDTH, BUTTON_HEIGHT);
         }
-        //TODO: Verify these numbers
         this.minecraft.fontRenderer.drawString(matrixStack, "Copy Item", j1 + 17, k1 + 4, 0xF5F5F5);
     }
 

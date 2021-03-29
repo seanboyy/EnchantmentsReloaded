@@ -31,7 +31,7 @@ import java.util.*;
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class EnchantmentCraftingTableContainer extends Container {
-    private final Random randomizer = new Random();
+    private final Random randomizer;
     private final IInventory tableInventory = new Inventory(2) {
         @Override
         public void markDirty() {
@@ -47,6 +47,7 @@ public class EnchantmentCraftingTableContainer extends Container {
 
     public EnchantmentCraftingTableContainer(int id, PlayerInventory playerInventoryIn, IWorldPosCallable worldPosCallable) {
         super(Containers.ENCHANTMENT_CRAFTING_TABLE.get(), id);
+        randomizer = playerInventoryIn.player.getRNG();
         this.worldPosCallable = worldPosCallable;
         this.addSlot(new Slot(this.tableInventory, 0, 70, 20) {
             @Override
@@ -92,16 +93,22 @@ public class EnchantmentCraftingTableContainer extends Container {
 
     public static boolean enchantmentCanApplyAgainstCollection(Collection<Enchantment> enchantments, Enchantment enchantment) {
         for(Enchantment ench : enchantments) {
-            if(!enchantment.canApplyTogether(ench)) return false;
+            if(!enchantment.canApplyTogether(ench) || !ench.canApplyTogether(enchantment)) return false;
         }
         return true;
     }
 
-    public boolean performModification(PlayerEntity playerIn, EnchantmentModifierType modifierTypeIn) {
+    public boolean canPerformModification(PlayerEntity playerIn) {
         ItemStack enchantedItem = this.tableInventory.getStackInSlot(0);
         ItemStack fuel = this.tableInventory.getStackInSlot(1);
         Map<Enchantment, Integer> enchantmentsOnItem = EnchantmentHelper.getEnchantments(enchantedItem);
-        if(enchantmentsOnItem.isEmpty() || ((fuel.isEmpty() || fuel.getCount() < 1) && !playerIn.abilities.isCreativeMode)) return false;
+        return !enchantmentsOnItem.isEmpty() && ((!fuel.isEmpty() && fuel.getCount() >= 1) || playerIn.abilities.isCreativeMode);
+    }
+
+    public void performModification(PlayerEntity playerIn, EnchantmentModifierType modifierTypeIn) {
+        ItemStack enchantedItem = this.tableInventory.getStackInSlot(0);
+        ItemStack fuel = this.tableInventory.getStackInSlot(1);
+        Map<Enchantment, Integer> enchantmentsOnItem = EnchantmentHelper.getEnchantments(enchantedItem);
         this.worldPosCallable.consume((world, pos) -> {
             List<Enchantment> enchantments = new ArrayList<>();
             switch(modifierTypeIn) {
@@ -176,7 +183,6 @@ public class EnchantmentCraftingTableContainer extends Container {
             this.onCraftMatrixChanged(this.tableInventory);
             world.playSound(null, pos, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.BLOCKS, 1F, world.rand.nextFloat() * 0.1F + 0.9F);
         });
-        return true;
     }
 
     @Override

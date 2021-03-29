@@ -2,7 +2,6 @@ package io.github.seanboyy.enchantmentsreloaded.util;
 
 import io.github.seanboyy.enchantmentsreloaded.EnchantmentsReloaded;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class Config {
